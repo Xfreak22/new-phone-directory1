@@ -1,7 +1,14 @@
+import React, {Component} from 'react';
 
-function App() {
-  return (
+
+
+class App extends Component {
+  render() {
+    let x = 1;
+      let y = 2;
+    return(  
     <div>
+      
     {/* <div className="Header">
       Phone directory
     </div>
@@ -11,9 +18,10 @@ function App() {
      <span>Phone</span>
     </div> */}
     <label htmlfor="name">Name: </label>
-    <input id="name" text="text" placeholder="Type here" defaultValue="Suraj"/>
+    <input id="name" text="text" placeholder="Type here" defaultValue={x+y}/>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
