@@ -1,24 +1,20 @@
 import React, {Component} from 'react';
-
+import Header from './Header';
 
 
 class App extends Component {
   render() {
-    let x = 1;
-      let y = 2;
-    return(  
+    return (
+      <div>
+      <Header/>  
     <div>
-      
-    {/* <div className="Header">
-      Phone directory
-    </div>
     <button>Add</button>
+    <div/>
     <div>
      <span>Name</span><br/>
      <span>Phone</span>
-    </div> */}
-    <label htmlfor="name">Name: </label>
-    <input id="name" text="text" placeholder="Type here" defaultValue={x+y}/>
+    </div>
+    </div>
     </div>
     )
   }
