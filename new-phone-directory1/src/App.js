@@ -4,6 +4,14 @@ import Button1 from './button';
 
 class App extends Component {
   render() {
+    const Button2 = function() {
+      const buttonstyle1 = {background: "red", color: "white", margin: "auto", padding: 10, width: 70, border: "none"} 
+      return(
+      <div>
+        <span><button style={buttonstyle1}>Delete</button></span>
+      </div>
+      )
+  }
     let subscriberlist = [
       {
         id: 1,
@@ -31,7 +39,9 @@ class App extends Component {
         subscriberlist.map(sub =>{
          return <div key={sub.id}>
                 <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Name}</span>
-                <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Phone}</span>       
+                <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Phone}</span>
+                <Button2/> 
+               
          </div>
         })
       } 
