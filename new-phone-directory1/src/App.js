@@ -8,7 +8,7 @@ class App extends Component {
       const buttonstyle1 = {background: "red", color: "white", margin: "auto", padding: 10, width: 70, border: "none"} 
       return(
       <div>
-        <span><button style={buttonstyle1}>Delete</button></span>
+        <button style={buttonstyle1}>Delete</button>
       </div>
       )
   }
@@ -26,7 +26,7 @@ class App extends Component {
     ]
     return (
       <div>
-      <Header/>  
+      <Header headingname="Phone Directory"/>  
     <div>
       <Button1/>
     <div/>
@@ -40,7 +40,7 @@ class App extends Component {
          return <div key={sub.id}>
                 <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Name}</span>
                 <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Phone}</span>
-                <Button2/> 
+                <span><Button2/></span>
                
          </div>
         })
