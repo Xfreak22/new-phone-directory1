@@ -1,10 +1,10 @@
 import React from "react";
+import './App.css';
 
-const Button1 = function() {
-    const buttonstyle = {background: "lightgreen", color: "white", margin: 10, padding: 10, width: 70, border: "none"} 
+const Button1 = function(props) {
     return(
     <div>
-        <button style={buttonstyle}>Add</button>
+        <button className="button-style1">{props.heading}</button>
     </div>
     )
 }

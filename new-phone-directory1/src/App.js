@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
 import Header from './Header';
+import './App.css';
+import './common/common1.css';
 import Button1 from './button';
 
 class App extends Component {
   render() {
-    const Button2 = function() {
-      const buttonstyle1 = {background: "red", color: "white", margin: "auto", padding: 10, width: 70, border: "none"} 
-      return(
-      <div>
-        <button style={buttonstyle1}>Delete</button>
-      </div>
-      )
-  }
     let subscriberlist = [
       {
         id: 1,
@@ -25,28 +19,26 @@ class App extends Component {
       }
     ]
     return (
-      <div>
-      <Header headingname="Phone Directory"/>  
-    <div>
-      <Button1/>
-    <div/>
-    <div>
-     <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>Name</span>
+      <div >
+        <div className="header-styling">
+        <Header heading="Phone Directory"/>
+        </div>
+        <Button1 heading="Add"/>
+    <div className='sub-heading-div-margin-for-name-and-num'>
+     <span style={{color: "darkslategrey", margin: 30, padding: 10, width: "auto"}}>Name</span>
      <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>Phone</span>
     </div>
  
-      {
+      { 
         subscriberlist.map(sub =>{
-         return <div key={sub.id}>
-                <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Name}</span>
-                <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>{sub.Phone}</span>
-                <span><Button2/></span>
-               
+         return  <div className='Content' key={sub.id}>
+                <span className='Content-span-styling'>{sub.Name}</span>   
+                <span className='Content-span-styling1'>{sub.Phone}</span>
+                <button type='submit' className='button-style2'>Delete</button>
          </div>
         })
       } 
 
-    </div>
     </div>
     )
   }

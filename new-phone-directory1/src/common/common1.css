@@ -1,0 +1,61 @@
+.Content-span-styling {
+    margin-inline: -3px;
+      margin-left: 1px;
+      padding-left: 1px;
+      margin-inline-end: 40px 
+  }
+  
+  .Content-span-styling1 {
+    margin-inline: -3px;
+      margin-left: 1px;
+      padding-left: 1px;
+      margin-inline-end: 40px 
+  }
+  
+  
+  .Content{
+      margin: 10px;
+      margin-left: 30px;
+  }
+  
+  .sub-heading-div-margin-for-name-and-num {
+    margin: 2px 0px -2px -9px;
+  }
+  
+  .button-style1 {
+    background: grey;
+    color: white;
+    margin: 30px;
+    padding: 15px;
+    width: 70px;
+    border: none;
+    cursor: pointer;
+  } 
+    
+  .button-style2 {
+    background: red;
+    color: white;
+     margin: 10px;
+    padding: 10px; 
+    width: 70; 
+    border: none;
+    cursor: pointer;
+  } 
+  
+  .header-styling {
+    background-color: black;
+    padding: 10px;
+    text-transform: "uppercase";
+    color: white;
+    text-align: center;
+  }
+
+  .button-style2 {
+    background: lightgreen;
+    color: white;
+    margin: 30px;
+    padding: 15px;
+    width: 70px;
+    border: none;
+    cursor: pointer;
+  } 
