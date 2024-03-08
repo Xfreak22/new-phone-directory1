@@ -23,7 +23,7 @@ class AddSubscriber extends Component {
             <div className="span-container-for-subscriber">
              <span>Subsrciber to be added: </span><br/>
              <span>Name:</span><br/>
-             <span>Phone:</span><br/>
+             <span>Phone:</span><br/> 
              <Button1 heading="Add"/>
             </div>
             </form>
