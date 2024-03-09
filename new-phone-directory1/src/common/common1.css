@@ -26,7 +26,7 @@
     background: grey;
     color: white;
     margin: 30px;
-    padding: 15px;
+    padding: 10px;
     width: 70px;
     border: none;
     cursor: pointer;
@@ -53,9 +53,23 @@
   .button-style2 {
     background: lightgreen;
     color: white;
-    margin: 30px;
-    padding: 15px;
+    margin: 0px; 
     width: 70px;
     border: none;
     cursor: pointer;
+    margin-top: 15px;
   } 
+
+.form-style{
+    margin: 30px;
+    margin-top: 0px;  
+}
+
+.label-design{
+  color: slategrey;
+}
+
+.input-design{
+  width: fit-content;
+  margin-bottom: 15px;
+}

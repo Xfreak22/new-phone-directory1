@@ -5,19 +5,28 @@ import './common/common1.css';
 import Button1 from './button';
 
 class App extends Component {
+  
+
+  constructor (){
+    super();
+    this.state = {
+      subscriberlisttoshow: []
+    }
+  }
+
   render() {
-    let subscriberlist = [
-      {
-        id: 1,
-        Name: "Suraj",
-        Phone: 9319236003
-      },
-      {
-        id: 2,
-        Name: "Manish",
-        Phone: 8144813417
-      }
-    ]
+    // let subscriberlist = [
+    //   {
+    //     id: 1,
+    //     Name: "Suraj",
+    //     Phone: 9319236003
+    //   },
+    //   {
+    //     id: 2,
+    //     Name: "Manish",
+    //     Phone: 8144813417
+    //   }
+    // ]
     return (
       <div >
         <div className="header-styling">
@@ -30,7 +39,7 @@ class App extends Component {
     </div>
  
       { 
-        subscriberlist.map(sub =>{
+        this.state.subscriberlisttoshow.map(sub =>{
          return  <div className='Content' key={sub.id}>
                 <span className='Content-span-styling'>{sub.Name}</span>   
                 <span className='Content-span-styling1'>{sub.Phone}</span>
