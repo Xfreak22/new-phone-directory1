@@ -1,32 +1,23 @@
 import React, {Component} from 'react';
 import Header from './Header';
-import './App.css';
+import './ShowSubscribers.css';
 import './common/common1.css';
 import Button1 from './button';
 
-class App extends Component {
-  
-
-  constructor (){
-    super();
-    this.state = {
-      subscriberlisttoshow: []
-    }
-  }
+class ShowSubscribers extends Component {
+  // constructor (){
+  //   super();
+  //   this.state = {
+  //     subscriberlisttoshow: [{
+  //       id: '1',
+  //       Name:"Suraj kumar",
+  //       Phone:"9319236003"
+  //     }]
+      
+  //   }
+  // }
 
   render() {
-    // let subscriberlist = [
-    //   {
-    //     id: 1,
-    //     Name: "Suraj",
-    //     Phone: 9319236003
-    //   },
-    //   {
-    //     id: 2,
-    //     Name: "Manish",
-    //     Phone: 8144813417
-    //   }
-    // ]
     return (
       <div >
         <div className="header-styling">
@@ -39,7 +30,7 @@ class App extends Component {
     </div>
  
       { 
-        this.state.subscriberlisttoshow.map(sub =>{
+        this.props.SubscriberList.map(sub =>{
          return  <div className='Content' key={sub.id}>
                 <span className='Content-span-styling'>{sub.Name}</span>   
                 <span className='Content-span-styling1'>{sub.Phone}</span>
@@ -53,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;
