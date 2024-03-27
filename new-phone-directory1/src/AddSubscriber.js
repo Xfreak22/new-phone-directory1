@@ -3,6 +3,8 @@ import './common/common1.css';
 import Header from "./Header";
 import Button1 from "./button";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
+
 
 class AddSubscriber extends Component {
 
@@ -27,6 +29,7 @@ class AddSubscriber extends Component {
         e.preventDefault();
         this.props.addsubscriberHandler(this.state);
         this.setState({id:0, name:'', Phone:''});
+        this.props.history.push("/");
         }
     render(){
         const {name,phone} = this.state;
@@ -36,7 +39,7 @@ class AddSubscriber extends Component {
         <Header heading="Add Subsrciber"/>
         </div>
         <div>
-        <Button1 heading="Back"/>
+        <Link to="/"><Button1 heading="Back"/></Link>
         </div>
         <div>
             <form className="form-style" onSubmit={this.onFormSubmit.bind(this)}>
