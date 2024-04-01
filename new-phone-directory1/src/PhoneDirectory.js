@@ -13,33 +13,50 @@ class PhoneDirectory extends Component{
         this.state = {
             SubscriberList: [{
                 id: '1',
-                Name:"Suraj kumar",
-                Phone:"9319236003"
-            }]
+                name:"Suraj kumar",
+                phone:"9319236003"
+            },
+        {
+            id: '2',
+                name:"Manish kumar",
+                phone:"8448134417"
+        }]
         }
     }
 
-    addsubscriberHandler = (newSubscriber) =>{
+
+    deletesubscriberHandler = (subscriberId) =>{
+   let subscribersList = this.state.SubscriberList;
+   let subscriberIndex = 0;
+   subscribersList.forEach(function (subscriber, index){
+    if(subscriber.id == subscriberId){
+        subscriberIndex = index;
+    }
+   },this);
+   let newSubscribers = subscribersList;
+   newSubscribers.splice(subscriberIndex, 1);
+   this.setState({subscribers: newSubscribers});
+    }
+
+    addsubscriberHandler = (newSubscriber) => {
        let SubscriberList = this.state.SubscriberList;
-       if(SubscriberList.length >0){
-        newSubscriber.id = SubscriberList[SubscriberList.length -1].id +1;   
+       if(SubscriberList.length > 0){
+        newSubscriber.id = SubscriberList[SubscriberList.length - 1].id +1;   
        }else{
         newSubscriber.id = 1;
        }
-
-       SubscriberList.push(SubscriberList);
+       SubscriberList.push(newSubscriber);
        this.setState({SubscriberList: SubscriberList});
-       console.log("Phone Directory");
-       console.log(this.state.SubscriberList); 
     }
     render(){
         return(
             <Router>
                 <Routes>
-                <Route exact path='/' Component={(props) => <ShowSubscribers {...props} SubscriberList={this.state.SubscriberList}/>}/>
-                <Route exact path='/add' Component={(props) => <AddSubscriber {...props} addsubscriberHandler={this.state.addsubscriberHandler}/>}/>
+                <Route exact path="/"  Component={(props) => <ShowSubscribers {...props} SubscriberList={this.state.SubscriberList} deletesubscriberHandler={this.deletesubscriberHandler}/>}/>
+                <Route exact path="/add" Component={({history}, props) => <AddSubscriber history={history} {...props} addsubscriberHandler={this.addsubscriberHandler}/>}/>
                 </Routes>
             </Router>
+            // <AddSubscriber addsubscriberHandler={this.addsubscriberHandler}/>
         )
     }
 }

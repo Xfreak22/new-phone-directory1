@@ -7,17 +7,12 @@ import { Link } from 'react-router-dom';
 
 
 class ShowSubscribers extends Component {
-  // constructor (){
-  //   super();
-  //   this.state = {
-  //     subscriberlisttoshow: [{
-  //       id: '1',
-  //       Name:"Suraj kumar",
-  //       Phone:"9319236003"
-  //     }]
-      
-  //   }
-  // }
+ 
+  onDeletedClick = (subscriberId) =>{
+    this.props.deletesubscriberHandler(subscriberId);
+  }
+
+
 
   render() {
     return (
@@ -25,7 +20,7 @@ class ShowSubscribers extends Component {
         <div className="header-styling">
         <Header heading="Phone Directory"/>
         </div>
-        <Link to="/add"><Button1 heading="Add"/></Link>
+       <Link to="/add"><Button1 heading="Add"/></Link>
     <div className='sub-heading-div-margin-for-name-and-num'>
      <span style={{color: "darkslategrey", margin: 30, padding: 10, width: "auto"}}>Name</span>
      <span style={{color: "darkslategrey", margin: "auto", padding: 10, width: "auto"}}>Phone</span>
@@ -33,11 +28,11 @@ class ShowSubscribers extends Component {
  
       { 
         this.props.SubscriberList.map(sub =>{
-         return  <div className='Content' key={sub.id}>
-                <span className='Content-span-styling'>{sub.Name}</span>   
-                <span className='Content-span-styling1'>{sub.Phone}</span>
-                <button type='submit' className='button-style2'>Delete</button>
-         </div>
+         return  <div key={sub.id} className='Content'>
+                <span className='Content-span-styling'> {sub.name}</span>   
+                <span className='Content-span-styling1'>{sub.phone}</span>
+                <button type='submit' className='button-style3' onClick={this.onDeletedClick.bind(this,sub.id)}>Delete</button>
+                 </div>
         })
       } 
 

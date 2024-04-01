@@ -6,8 +6,10 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 
+
 class AddSubscriber extends Component {
 
+   
 
     constructor (){
         super();
@@ -22,16 +24,16 @@ class AddSubscriber extends Component {
             const state = this.state;
             state[e.target.name] = e.target.value;
             this.setState(state);
-            console.log(state);
         }
     
-        onFormSubmit = (e) =>{
+        onFormSubmitted = (e) =>{
         e.preventDefault();
         this.props.addsubscriberHandler(this.state);
-        this.setState({id:0, name:'', Phone:''});
-        this.props.history.push("/");
+        this.setState({id:0, name:'', phone:''});
+        
         }
-    render(){
+        
+    render(){   
         const {name,phone} = this.state;
         return(
             <Fragment>
@@ -42,11 +44,11 @@ class AddSubscriber extends Component {
         <Link to="/"><Button1 heading="Back"/></Link>
         </div>
         <div>
-            <form className="form-style" onSubmit={this.onFormSubmit.bind(this)}>
+            <form className="form-style" onSubmit={this.onFormSubmitted.bind(this)}>
              <label className="label-design" htmlFor="name">Name: </label><br/>
              <input className="input-design" id="name" name="name" onChange={this.inputChangedHandler}/><br/>
              <label className="label-design" htmlFor="phone">Phone: </label><br/>
-             <input className="input-design" id="Phone" name="phone" onChange={this.inputChangedHandler}/><br/>
+             <input className="input-design" id="phone" name="phone" onChange={this.inputChangedHandler}/><br/>
             <div className="span-container-for-subscriber">
              <span>Subsrciber to be added: </span><br/>
              <span className="label-design">Name: {name}</span><br/>
